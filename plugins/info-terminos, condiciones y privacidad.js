@@ -5,7 +5,7 @@ import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, command, args, usedPrefix: _p, __dirname, isOwner, text, isAdmin, isROwner }) => {
 if (m.fromMe) return
   
-const { levelling } = '../lib/levelling.js'
+const { levelling } = require('../lib/levelling.js')
 //let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text }) => {
 
 let { exp, limit, level, role } = global.db.data.users[m.sender]
@@ -67,7 +67,7 @@ let username = conn.getName(who)
 //let user = global.db.data.users[m.sender]
 //user.registered = false
 
-let Terminos = `*_Toda la informacion que se mencione aqui no excluye a la Propietaria del Bot, y Propietarios Acredores al uso de GataBot-MD_*
+let Terminos = `*_Toda la informacion que se mencione aqui no excluye a la Propietaria del Bot, y Propietarios Acredores al uso de Akuma-MD_*
 *_No Somos responsables del desconocimiento que tenga por parte de esta informacion._* 
 
 
@@ -78,9 +78,9 @@ _- Lo que realice con el BOT queda solo en Usted ya que en Numero(s) Oficial(es)
 
 _- Es posible que en Numero(s) Oficial(es) el Bot no este Activado las 24 Horas de los 7 dias de la Semana, eso no implica que no lo este o que Propietarios NO OFICIALES puedan Hacerlo._
 
-_- El chat anonimo del comando #start, valga la redundancia no mostrará ningun dato de los Usuarios por parte de GataBot. Eso no implica que las personas que hagan uso de esta funcion puedan dar a conocer sus datos. en Numero(s) Oficial(es)._
+_- El chat anonimo del comando #start, valga la redundancia no mostrará ningun dato de los Usuarios por parte de Akuma-Bot-MD ot. Eso no implica que las personas que hagan uso de esta funcion puedan dar a conocer sus datos. en Numero(s) Oficial(es)._
 
-_- Los Datos que Obtenga GataBot en Cuentas Oficiales de Usuarios(as), Grupos y Ajustes del Mismo puede verse Reiniciado, Modificado, y/o Retificado con el fin de que el Bot este en optimas Condiciones para su Uso. (Usuarios(as) Pueden Pedir Compensacion Por Instagram o por el comando #Reporte. Debe de Presentar Pruebas)._
+_- Los Datos que Obtenga Akuma en Cuentas Oficiales de Usuarios(as), Grupos y Ajustes del Mismo puede verse Reiniciado, Modificado, y/o Retificado con el fin de que el Bot este en optimas Condiciones para su Uso. (Usuarios(as) Pueden Pedir Compensacion Por Instagram o por el comando #Reporte. Debe de Presentar Pruebas)._
 
 _- NO somos responsable si Hay alteraciones de este Bot no siendo Numero(s) Oficial(es) y tengan de uso un Repositorio de GitHub que no corresponda al Oficial, o que implementen Usuarios de Terceros integraciones que comprometan a los(as) Usuarios(as) al utilizar Versiones no Oficiales._
 
@@ -115,14 +115,14 @@ _- Al hacer uso de ciertos comandos que tengan como objetivo socavar la incomodi
 *${md}
 
 *CUENTA OFICIAL DE ASISTENCIA - INSTAGRAM*
-~ _Solo en esta Cuenta Respondo si tiene Dudas, Preguntas o Necesita Ayuda sobre GataBot, Tambien puede Comunicarse en Caso de Temas de Colaboracion_
+~ _Solo en esta Cuenta Respondo si tiene Dudas, Preguntas o Necesita Ayuda sobre Akuma, Tambien puede Comunicarse en Caso de Temas de Colaboracion_
 *${ig}*
 
 *DONAR A LA CREADORA EN ESTA CUENTA OFICIAL*
 ~ _Si te Agrada y valoras el Trabajo que he realizado, puedes ayudarme en Donar para que pueda continuar en este Proyecto_
-*https://paypal.me/OficialGD*
+*https://paypal.me/*
 
-*~ Muchas Gracias Por tomarte el tiempo en informate sobre GataBot*` 
+*~ Muchas Gracias Por tomarte el tiempo en informate sobre Akuma*` 
 await conn.sendFile(m.chat, pp, 'gata.mp4', Terminos)
 /*.trim()
 conn.sendHydrated(m.chat, Terminos,  `${wm}\nEstamos de acuerdo en Hacer Colaboraciones con Personas Comprometidas, manteniendo el Respeto Puedes Contactar si ese es el caso a esta Cuenta Oficial | https://www.instagram.com/gata_dios`, pp, 'https://github.com/GataNina-Li/GataBot-MD', '饾檪饾櫀饾櫓饾櫀饾樈饾櫎饾櫓-饾檲饾樋', null, null, [
