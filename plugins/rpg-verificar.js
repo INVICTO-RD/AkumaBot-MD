@@ -27,8 +27,8 @@ minute: 'numeric',
 second: 'numeric'
 }) 
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who, 'image').catch((_) => gataMenu)
-let ppch = await conn.profilePictureUrl(who, 'image').catch(_ => gataMenu.getRandom())
+let pp = await conn.profilePictureUrl(who, 'image').catch((_) => 'https://files.fm/u/cc6uzjw65a');
+let ppch = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.fm/u/cc6uzjw65a');
 let userNationality = null; 
 try {
 let api = await axios.get(`${apis}/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`);
@@ -87,10 +87,10 @@ if (user.registered === true) return conn.reply(m.chat, `${lenguajeGB['smsAvisoI
 //console.log(e)}
   
 if (command == 'verificar' || command == 'verify' || command == 'register' || command == 'reg' || command == 'registrar') {
-await conn.reply(m.chat, `*👀 CÓMO DESEA REGISTRARSE?*\n\n📑 *REGISTRO RÁPIDO*\n• Insignia de verificación\n• Desbloquear comandos que requieran registro\n\n*Escriba para el registro rápido:*\n${usedPrefix}reg1 nombre edad\n\n🗂️ *REGISTRO COMPLETO*\n• Insignia de verificación\n• Desbloquear comandos que requieran registro\n• Premium Temporal Gratis\n• Más opciones para este registro\n\n*Escriba para el registro completo:*\n${usedPrefix}nombre\n\n\`\`\`⭐ Considere que tendrá un tiempo para completar en caso de registrarse\`\`\``, fkontak, m)
+await conn.reply(m.chat, `\n\n📑 *REGISTRO RÁPIDO*\n• Insignia de verificación\n• Desbloquear comandos que requieran registro\n\n*Escriba para el registro rápido:*\n${usedPrefix}reg nombre.edad`, fkontak, m)
 }
 
-if (command == 'reg1') {
+if (command == 'reg1','reg') {
 registrando = true
 if (registrando === true) {
 intervalId = setInterval(mensajeRegistro, 2 * 60 * 1000) //2 min
@@ -100,19 +100,19 @@ clearInterval(intervalId)}, 126000) //2.1 min
 
 registro = text.replace(/\s+/g, usedPrefix) 
 _registro = text.split(" ",2)
-if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_\n\n⭐ *Si desea personalizar más su registro, escriba:*\n${usedPrefix}nombre`, fkontak, m)
+if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoIIG']()}👉 *PARÁMETROS DEL REGISTRO:*\n${usedPrefix + command} nombre.edad\n\n\`\`\`EJEMPLO:\`\`\`\n${usedPrefix + command} ${gt} 20\n\n*✨ CONSEJO:*\n• _Su nombre no debe de contener números_\n• _La edad no debe de contener letras_\n\n⭐ *Si desea personalizar más su registro, escriba:*\n${usedPrefix}nombre`, fkontak, m)
 //if (_registro['length'] >= 3 || isNaN(_registro[1])) return 
 //conn.sendButton(m.chat, fg + '🙃 *ESTÁ INTENTANDO SEPARAR SU NOMBRE O UNIR TODO?* ', '🧐 *COINCIDE COMO EN ESTOS EJEMPLOS:*\n' + `\`\`\`${usedPrefix + command} Super${gt}20\`\`\`` + '\n' + `\`\`\`${usedPrefix + command} Super 15 ${gt} \`\`\`` + '\n' + `\`\`\`${usedPrefix + command} Super ${gt} 24 De ${author}\`\`\`\n\n` + '*Si cumple que tenga (Nombre/Frase y Edad) Autocompletaremos su Registro, de lo contraio vuelva a registrarse*\n➘ _Use el Botón de abajo_', null, [[`🌟 AUTOCOMPLETAR MI REGISTRO`, usedPrefix + 'reg1' + ' ' + text.replace(/[♧◇♡♤■□●○•°☆▪︎¤¿?¡¬¦±×÷°µ§©®™¶€¢£¥₽₹₩₱₸₪₫₮₦₴₡₭₲₼₿.,\/#!$%\^&\*;:{}@=\-_`~()\s\0-9]/gi, "") + ' ' + text.replace(/[♧◇♡♤■□●○•°☆▪︎¤¿?¡¬¦±×÷°µ§©®™¶€¢£¥₽₹₩₱₸₪₫₮₦₴₡₭₲₼₿.,\/#!$%\^&\*;:{}@=\-_`~()\s\a-z]/gi, "")], ['📑 VOLVER A REGISTRAR', command + usedPrefix]], m)
-if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+if (!_registro[0]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU NOMBRE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
+if (_registro[0].length >= 30) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY LARGO, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
+if (_registro[0].length <= 2) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE ES MUY CORTO O FALTANTE, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
 _registro[0] = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "")
 user.name = _registro[0]
 
-if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (isNaN(_registro[1])) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*NO SE ENCONTRÓ LA EDAD, RECUERDE USAR:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\`\n\n> *Nota:* No use prefijos ni símbolos entre el nombre y edad, solo es válido un espacio entre el nombre y la edad.`, fkontak, m)
-if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
-if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre edad\`\`\``, fkontak, m)
+if (!_registro[1]) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*FALTA SU EDAD, PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
+if (isNaN(_registro[1])) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*NO SE ENCONTRÓ LA EDAD, RECUERDE USAR:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\`\n\n> *Nota:* No use prefijos ni símbolos entre el nombre y edad, solo es válido un espacio entre el nombre y la edad.`, fkontak, m)
+if (_registro[1] > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MAYOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
+if (_registro[1] < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*SU EDAD ES MUY MENOR, USE OTRA EDAD POR FAVOR*\n\n*PARÁMETROS DEL REGISTRO:*\n\`\`\`${usedPrefix + command} nombre.edad\`\`\``, fkontak, m)
 user.age = parseInt(_registro[1]) //_registro[1]	
 global.db.data.users[m.sender]['registroR'] = true
 
@@ -126,7 +126,7 @@ let registroRapido = ` *░ 📑 REGISTRO ACTUAL 📑 ░*
 ╰┈┈┈┈┈┈┈┈┈┈┈┈•
 
 ❇️ \`\`\`Para finalizar su registro escriba:\`\`\`
-✪ *${usedPrefix}finalizar*`
+✪ *${usedPrefix}reg*`
 
 await conn.sendMessage(m.chat, {
 text: registroRapido,
@@ -135,7 +135,7 @@ externalAdReply: {
 title: wm,
 body: '🌟 Puede modificar su registro antes de finalizar',
 thumbnailUrl: pp, 
-sourceUrl: 'https://www.atom.bio/gatabot/',
+sourceUrl: 'https://www.atom.bio//',
 mediaType: 1,
 showAdAttribution: true,
 renderLargerThumbnail: true
@@ -154,7 +154,7 @@ if (/^\d+$/.test(text)) return conn.sendMessage(m.chat, {text: `${lenguajeGB['sm
 if (text.length >= 25) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoFG']()}*USE UN NOMBRE MÁS CORTO, EJEMPLO:*\n${usedPrefix}nombre ${gt}\n\n🌟 _Si quiere usar su nombre registrado en su WhatsApp, escriba:_\n*${usedPrefix}nombre2*`}, {quoted: fkontak})
 if (text.length <= 2) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoFG']()}*NOMBRE FALTANTE O MUY CORTO, EJEMPLO:*\n${usedPrefix}nombre ${gt}\n\n🌟 _Si quiere usar su nombre registrado en su WhatsApp, escriba ${usedPrefix}nombre2_`}, {quoted: fkontak})
 user.name = text.replace(/\s+/g, '').replace(/[0-9]+/gi, "").trim()
-if (user.name) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}🌟 *GENIAL!! SE HA COMPLETADO LO SIGUIENTE*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*❖ NOMBRE:*\n${user.name === 0 ? sinDefinir : user.name}\n\n🔢 *AHORA PUEDE REGISTRAR SU EDAD, EJEMPLO:*\n\`\`\`${usedPrefix}edad 20\`\`\``}, {quoted: fkontak})
+if (user.name) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}🌟 *GENIAL!! SE HA COMPLETADO LO SIGUIENTE*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*❖ NOMBRE:*\n${user.name === 0 ? sinDefinir : user.name}\n\n🔢 *AHORA PUEDE REGISTRAR SU EDAD, EJEMPLO:*\n\`\`\`${usedPrefix}edad.20\`\`\``}, {quoted: fkontak})
 }
 	
 if (command == 'nombre2' || command == 'name2') {
@@ -162,11 +162,11 @@ if (/^\d+$/.test(text)) return conn.sendMessage(m.chat, {text: `${lenguajeGB['sm
 if (nombreWA.slice(1).length < 2) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE DE WHATSAPP ES MUY CORTO PARA REGISTRAR*\n\n*Modifique su nombre de WhatsApp e intente de nuevo o puede personalizar 🌟 su nombre usando:*\n*${usedPrefix}nombre ${gt}*`}, {quoted: fkontak})
 if (nombreWA.slice(1).length > 25) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoFG']()}*SU NOMBRE DE WHATSAPP ES MUY LARGO PARA REGISTRAR*\n\n*Modifique su nombre de WhatsApp e intente de nuevo o puede personalizar 🌟 su nombre usando:*\n*${usedPrefix}nombre ${gt}*`}, {quoted: fkontak})
 user.name = nombreWA.replace(/\s+/g, '').replace(/[0-9]+/gi, "").slice(1).trim()
-if (user.name) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}🌟 *GENIAL!! SE HA COMPLETADO LO SIGUIENTE*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*❖ NOMBRE:*\n${user.name === 0 ? sinDefinir : user.name}\n\n🔢 *AHORA PUEDE REGISTRAR SU EDAD, EJEMPLO:*\n\`\`\`${usedPrefix}edad 20\`\`\``}, {quoted: fkontak})
+if (user.name) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}🌟 *GENIAL!! SE HA COMPLETADO LO SIGUIENTE*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*❖ NOMBRE:*\n${user.name === 0 ? sinDefinir : user.name}\n\n🔢 *AHORA PUEDE REGISTRAR SU EDAD, EJEMPLO:*\n\`\`\`${usedPrefix}edad.20\`\`\``}, {quoted: fkontak})
 }
 		
 if (command == 'edad' || command == 'age' || command == 'edad2' || command == 'age2') {
-if (verificar.test(text.slice(1)) == false && !text) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoIIG']()}*👉 AGREGUÉ SU EDAD PARA REGISTRAR, EJEMPLO:*\n${usedPrefix}edad 20`}, {quoted: fkontak})
+if (verificar.test(text.slice(1)) == false && !text) return conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoIIG']()}*👉 AGREGUÉ SU EDAD PARA REGISTRAR, EJEMPLO:*\n${usedPrefix}edad.20`}, {quoted: fkontak})
 if (isNaN(text)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*INGRESE SOLO NÚMEROS*`, fkontak, m)
 if (text > 90) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*DEMASIADO MAYOR PARA SER REGISTRADO*`, fkontak, m)
 if (text < 10) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}*DEMASIADO MENOR PARA SER REGISTRADO*`, fkontak, m)
@@ -309,7 +309,7 @@ var todosLosPasatiempos = ['👟 Acroyoga',
   '🍖 Aprender a hacer carne asada',
   '🍹 Aprender a hacer cócteles de frutas',
   '🍹 Aprender a hacer cócteles sin alcohol',
-  '🍹 Aprender a hacer cócteles y bebidas sin alcohol',
+  '🍹 Aprende a hacer cócteles y bebidas sin alcohol',
   '🍰 Aprender a hacer cheesecakes',
   '🍫 Aprender a hacer chocolate amargo',
   '🍫 Aprender a hacer chocolate blanco',
@@ -819,8 +819,8 @@ var todosLosPasatiempos = ['👟 Acroyoga',
   '🎮 Diseño de videojuegos',
   '🎨 Diseño gráfico digital',
   '🎭 Disfrazarme como personajes de anime',
-  '🎭 Disfrazarme como personajes de videojuegos',
-  '🎭 Disfrazarme de personajes de películas en eventos especiales',
+  '🎭 Disfrazarme como personajes de videojuegos', 
+ '🎭 Disfrazarme de personajes de películas en eventos especiales',
   '🎭 Disfrazarme de personajes de series de televisión en convenciones',
   '🎆 Disfrutar de fuegos artificiales y espectáculos.',
   '🚴 Disfrutar de paseos en bicicleta por la naturaleza.',
@@ -2396,7 +2396,7 @@ if (pasatiemposSeleccionados.length >= 1 && pasatiemposSeleccionados.length <= 5
 //console.log("Pasatiempos seleccionados:", resultado)
 user.pasatiempo = resultado
 global.db.data.users[m.sender]['registroC'] = true
-conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}*GENIAL!! SE HA AGREGADO \`${pasatiemposSeleccionados.length}/5\` PASATIEMPOS*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*${user.pasatiempo === 0 ? sinDefinir : user.pasatiempo}*\n\n🌟 *PARA GUARDAR SU REGISTRO ESCRIBA:*\n\`\`\`${usedPrefix}finalizar\`\`\``}, {quoted: fkontak})	
+conn.sendMessage(m.chat, {text: `${lenguajeGB['smsAvisoEG']()}*GENIAL!! SE HA AGREGADO \`${pasatiemposSeleccionados.length}/5\` PASATIEMPOS*\n*- - - - - - - - - - - - - - - - - - - - - - - - - - - -*\n\n*${user.pasatiempo === 0 ? sinDefinir : user.pasatiempo}*\n\n🌟 *PARA GUARDAR SU REGISTRO ESCRIBA:*\n\`\`\`${usedPrefix}reg\`\`\``}, {quoted: fkontak})	
 //console.log("Pasatiempos por separado:", pas1, pas2, pas3, pas4, pas5)
 }else{
 conn.reply(m.chat, `${lenguajeGB['smsAvisoAG']()}*EL PASATIEMPO "${pasatiempoSeleccionado === undefined ? 'DE ALGUNA POSICIÓN' : pasatiempoSeleccionado }" YA HA SIDO SELECCIONADO*`, fkontak, m) 
@@ -2411,7 +2411,7 @@ await conn.sendEvent(m.chat, "Última lista de pasatiempos.", `*Para ver las idi
 seleccionarPasatiempos(seleccion)
 }	
 	
-if (command == 'finalizar' || command == 'end') {
+if (command == 'reg' || command == 'end') {
 if (global.db.data.users[m.sender]['registroC'] == true) {
 if (user.premLimit === 0) {	
 tiempo = user.premLimit === 1 ? 0 : 36000000 //10 horas
@@ -2470,13 +2470,13 @@ ${user.registroC === true ? `☘️ *GÉNERO*
 ❇️ *PASATIEMPO(S)*
 ❱❱ ${user.pasatiempo}\n
 ${user.premLimit === 1 ? '' : `🎟️ *PREMIUM*
-❱❱ ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}\n> *Mira tú registro en este canal*\nhttps://whatsapp.com/channel/0029VatPwXw7Noa8n1Vinx3g`.trim(),
+❱❱ ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}\n> *Mira tú registro en este canal*\nhttps://whatsapp.com/channel/0029Vb2dIC2Chq6GQu1XhK3i`.trim(),
 contextInfo: {
 externalAdReply: {
 title: wm,
 body: user.name,
 thumbnailUrl: pp, 
-sourceUrl: 'https://www.atom.bio/gatabot',
+sourceUrl: 'https://www.atom.bio/',
 mediaType: 1,
 showAdAttribution: true,
 renderLargerThumbnail: true
@@ -2492,7 +2492,7 @@ let chtxt = `📑 *Tipo de registro »* ${user.registroC === true ? 'Completo' :
 🌱 *Orientación Sexual »* ${user.identidad}
 ❇️ *Pasatiempo(s) »* ${user.pasatiempo}
 ${user.premLimit === 1 ? '' : `🎟️ *Premium »* ${user.premLimit === 1 ? '' : `${user.premiumTime > 0 ? '✅' : '❌'} +10 HORAS || ${user.premiumTime - now} ms`}`}   ` : ''}${user.registroC === true ? `\n\n> 🌟 *Si es su primera vez registrándose, recibirá horas premium de forma gratuita como bonificación exclusiva por su primera inscripción, puede cancelar y eliminar su registro en cualquier momento. Gracias por registrarse ✨*` : ''}
-🐈 *Bot:* ${gt}`.trim()
+🐉 *Bot:* ${gt}`.trim()
 await global.conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
