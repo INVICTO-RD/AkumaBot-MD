@@ -29,6 +29,6 @@ m.reply(JT)
 console.error(error)
 }}
 
-handler.command = /^(steam|steamsearch)$/i
+handler.command = /^(steams|steamsearch)$/i
 
 export default handler
