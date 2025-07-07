@@ -4,22 +4,10 @@ const handler = async (m, { conn, command, text, usedPrefix, isOwner, isROwner, 
 if (!isOwner || !isROwner || !isAdmin) return m.reply(mid.mAdvertencia + `*No tienes permisos para usar este comando*`)
 
 if (!text || !/\d/.test(text)) {
-m.reply(mid.mInfo + `Agrega el prefijo del código de país, etiqueta o escribe el número de un usuario específico.\n\n> Si son varios, sepáralos por coma (,)\n\n*Ejemplo:*\n- *${usedPrefix + command}* +57\n- *${usedPrefix + command}* +57, +212, @tag, +num\n\n${mid.mAdvertencia}> *Al configurar esto, se eliminarán los usuarios con prefijos configurados o números específicos; ya sea cuando alguien ingrese o cuando escriba en el grupo*`)
+m.reply(mid.mInfo + `Agrega el prefijo del código de país, etiqueta o escribe el número de un usuario específico.\n\n> Si son varios, sepáralos por coma (,)\n\n*Ejemplo:*\n- *${usedPrefix + command}* +1\n- *${usedPrefix + command}* +57, +56, @tag, +num\n\n${mid.mAdvertencia}> *Al configurar esto, se eliminarán los usuarios con prefijos configurados o números específicos; ya sea cuando alguien ingrese o cuando escriba en el grupo*`)
 return
 }
 await obtenerPrefijos(text)
-
-let chat = global.db.data.chats[m.chat]
-if (chat.sCondition && chat.sCondition.length > 0) {
-reply = (await conn.reply(m.chat, mid.mInfo + `> *Hemos encontrado prefijos/números ya configurados*
-*Reciente:* \`\`\`${chat.sCondition.map(prefijo => `+${prefijo}`).join(', ')}\`\`\`
-*Existente:* \`\`\`${chat.sCondition.join(', ')}\`\`\`\n
-*Responde a este mensaje eligiendo un número para:*
-\`\`\`[1]\`\`\` \`Combinar\` _Se juntarán los prefijos existentes con los recientes._\n
-\`\`\`[2]\`\`\` \`Reemplazar\` _Se eliminarán los prefijos existentes para agregar los recientes._\n
-\`\`\`[3]\`\`\` \`Eliminar\` _Se usarán los prefijos predeterminados, eliminando los existentes y recientes._\n
-\`\`\`[4]\`\`\` \`Cancelar\` _No se realizarán cambios._`, m)).key.id
-}
 
 handler.before = async function (m, { conn, isOwner, isROwner, isAdmin }) {
 let chat = global.db.data.chats[m.chat]
@@ -51,7 +39,7 @@ if (m.quoted && m.quoted.id === reply && ['d', '4', 'cancelar'].includes(m.text.
 if (!isOwner || !isROwner || !isAdmin) return m.reply(`*Esta acción no te corresponde realizar*`)
 m.reply('*No se realizaron cambios.*')
 return
-}}}
+}}
 
 handler.command = /^(editarantifake|editarfake|editantifake|editfake)$/i
 handler.register = true
@@ -78,4 +66,4 @@ chat.sCondition = [...new Set(chat.sCondition)]
 
 const prefijosConSigno = chat.sCondition.map(prefijo => `+${prefijo}`)
 m.reply(mid.mExito + `Configuración guardada: *${prefijosConSigno.join(', ')}*\n\n> Puede agregar más si desea`)
-}
+}}
