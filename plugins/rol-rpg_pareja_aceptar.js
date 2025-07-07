@@ -126,7 +126,7 @@ return await conn.sendMessage(m.chat, {image: { url: "https://telegra.ph/file/bb
   mentionedJid: [m.sender],
   isForwarded: true,
   forwardedNewsletterMessageInfo: {
-    newsletterJid: '120363160031023229@newsletter',
+    newsletterJid: '@newsletter',
     newsletterName: "INFINITY-WA 💫",
     serverMessageId: -1,
   },
