@@ -19,14 +19,14 @@
     
 "homepage": "https://github.com/INVICTO-RD/GataBot-MD",
 "author": {
-"name": "GataNina-Li" },
+"name": "INVICTO-RD" },
     
 "repository": {
 "type": "git",
-"url": "git+https://github.com/GataNina-Li/GataBot-MD.git" },
+"url": "git+https://github.com/INVICTO-RD/GataBot-MD.git" },
 
 "bugs": {
-"url": "https://github.com/GataNina-Li/GataBot-MD/issues" },
+"url": "https://github.com/INVICTO-RD/GataBot-MD/issues" },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@whiskeysockets/baileys": "github:gatanina-li/baileys",
