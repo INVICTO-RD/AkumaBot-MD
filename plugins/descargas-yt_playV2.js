@@ -11,7 +11,7 @@ const ytplay2 = await yts(text);
 try {
 
 if (command === 'play.1' || command === 'audio') {
-conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + mid.smsAud, m, { contextInfo: { externalAdReply: { mediaUrl: null, mediaType: 1, description: null, title: wm, body: '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝗦𝗔𝗽𝗽', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}});
+conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + mid.smsAud, m, { contextInfo: { externalAdReply: { mediaUrl: null, mediaType: 1, description: null, title: wm, body: '🐉  AKUMA ', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}});
 try {
 const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp3?url=${yt_play[0].url}`);
 let { data } = await res.json();
@@ -45,7 +45,7 @@ await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['s
 }}}}}
 
 if (command === 'play.2') {
-conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + mid.smsVid, m, { contextInfo: { externalAdReply: { mediaUrl: null, mediaType: 1, description: null, title: wm, body: '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝗦𝗔𝗽𝗽', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}});
+conn.reply(m.chat, lenguajeGB['smsAvisoEG']() + mid.smsVid, m, { contextInfo: { externalAdReply: { mediaUrl: null, mediaType: 1, description: null, title: wm, body: '🐉 𝗦𝘂𝗽𝗲𝗿 AKUMA-𝗠𝗗', previewType: 0, thumbnail: gataImg, sourceUrl: accountsgb }}});
 try {
 const res = await fetch(`https://api.siputzx.my.id/api/d/ytmp4?url=${yt_play[0].url}`);
 let { data } = await res.json();
