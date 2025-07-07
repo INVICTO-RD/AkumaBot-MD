@@ -79,7 +79,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['biblia *<referencia>*', 'br'];
 handler.tags = ['search'];
-handler.command = ['biblia', 'br'];
+handler.command = ['biblias', 'br'];
 handler.register = true;
 
 export default handler;
