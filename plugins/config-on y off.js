@@ -283,7 +283,7 @@ if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
 throw false
 }}
-chat.reaction = isEnable          
+chat.reaction = false          
 break
 		
 case 'antitoxic': case 'antitoxicos': case 'antimalos':
