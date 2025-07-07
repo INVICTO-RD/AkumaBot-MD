@@ -32,6 +32,6 @@ const errorMessage2 = `\n${fg}` + error.message;
 }
 await m.reply(`${fg}`) 
 }}};
-handler.command = /^(update|actualizar|gitpull)$/i;
+handler.command = /^(update|nuevos|actualizar|gitpull)$/i;
 handler.rowner = true;
 export default handler;
