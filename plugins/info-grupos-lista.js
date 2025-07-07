@@ -14,7 +14,7 @@ const isBotAdmin = bot?.admin || false;
 const isParticipant = participants.some((u) => conn.decodeJid(u.id) === conn.user.jid);
 const participantStatus = isParticipant ? '✅ *ESTOY AQUÍ | YES*' : '❌ *NO ESTA AQUÍ | NO*';
 const totalParticipants = participants.length;
-txt += `🐈 *${i + 1}*
+txt += `🐉 *${i + 1}*
 ${lenguajeGB.smsLisC()} ${await conn.getName(jid)} ${participantStatus}
 ${lenguajeGB.smsLisD()} ${jid}
 ${lenguajeGB.smsLisF()} ${isBotAdmin ? '✅' : '❌'}
@@ -35,7 +35,7 @@ const isBotAdmin = bot?.admin || false;
 const isParticipant = participants.some((u) => conn.decodeJid(u.id) === conn.user.jid);
 const participantStatus = isParticipant ? '✅ *ESTOY AQUÍ | YES*' : '❌ *NO ESTA AQUÍ | NO*';
 const totalParticipants = participants.length;    
-    txt += `🐈 ${i + 1}
+    txt += `,🐉 ${i + 1}
 ${lenguajeGB.smsLisC()} ${await conn.getName(jid)} ${participantStatus}
 ${lenguajeGB.smsLisD()} ${jid}
 ${lenguajeGB.smsLisF()} ${isBotAdmin ? '✅' : '❌'}
