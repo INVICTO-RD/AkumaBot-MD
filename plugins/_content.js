@@ -5,6 +5,12 @@ import fs from 'fs'
 const { generateWAMessageFromContent, prepareWAMessageMedia, proto }  = (await import(global.baileys))
 import '../config.js'
 
+// Define global variables
+global.canal1 = 'canal1_value';
+global.canal2 = 'canal2_value';
+global.canal3 = 'canal3_value';
+global.canal4 = 'canal4_value';
+
 //let handler = m => m
 //handler.all = async function (m) {
 export async function before(m, { conn, text }) {	
@@ -27,8 +33,8 @@ const estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ..
 let ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 99, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
 let fgif = {key: {participant : '0@s.whatsapp.net'}, message: {"videoMessage": { "title": wm, "h": `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./media/menus/Menu3.jpg')}}}
                              
-let enlace = { contextInfo: { externalAdReply: {title: wm + ' 🐈', body: 'support group' , sourceUrl: redesMenu, thumbnail: await(await fetch(gataMenu)).buffer() }}}
-let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', thumbnailUrl: gataMenu, sourceUrl: accountsgb }}}
+let enlace = { contextInfo: { externalAdReply: {title: wm + ' 🐉', body: 'support group' , sourceUrl: redesMenu, thumbnail: await(await fetch(gataMenu)).buffer() }}}
+let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: ' 𝗦𝘂𝗽𝗲𝗿 AKUMA-𝗠𝗗 - 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 ', thumbnailUrl: gataMenu, sourceUrl: accountsgb }}}
 let dos = [enlace, enlace2]  
 global.wait = "⌛ *`Cargando...`*\n*✪✦✦⊹⊹⊹⊹⊹⊹⊹⊹✪* `20%`"
 global.waitt = "⏳ *`Cargando....`*\n*✪✦✦✦✦⊹⊹⊹⊹⊹⊹✪* `40%`"
@@ -44,15 +50,15 @@ li.DESTRAVip.to
 }
 //export default handler
 
-global.bot = "wa.me/525577917106"
+global.bot = "wa.me/18292588251"
 global.canales = [canal1, canal2, canal3, canal4][Math.floor(Math.random() * 4)]
 global.welgata = [tk, ig, md, yt, paypal, fb, ths, asistencia][Math.floor(Math.random() * 8)]
 global.redesMenu = [all, canal1, canal2, canal3, canal4, md, ig, paypal, yt, asistencia, fb, tk][Math.floor(Math.random() * 12)]
 global.accountsgb = [all, canal1, canal2, canal3, canal4, tk, ig, yt, paypal, fb, ths, md, asistencia][Math.floor(Math.random() * 13)]
 global.cuentas = [grupo1, grupo2, grupo_collab1, grupo_collab2, grupo_collab3, grupo_collab4][Math.floor(Math.random() * 6)]
 
-global.canalIdGB = ["120363160031023229@newsletter", "120363169294281316@newsletter", "120363203805910750@newsletter", "120363302472386010@newsletter"]
-global.canalNombreGB = ["INFINITY-WA 💫", "GB - UPDATE 🐈", "Tips sobre GataBot 🤩", "NEW PROJECT: YartexBot-MD ✨"]
+global.canalIdGB = ["@newsletter", "@newsletter", "@newsletter", "@newsletter"]
+global.canalNombreGB = ["INFINITY-WA 💫", "AB - UPDATE 🔥", "Tips sobre Akuma 🐉", "NEW PROJECT ✨"]
 global.channelRD = await getRandomChannel()
 
 // Imágenes 
