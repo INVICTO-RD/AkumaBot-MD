@@ -2,8 +2,8 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import similarity from 'similarity';
 
-let timeout = 60000;  //60s
-let timeout2 = 20000; //20s
+let timeout = 120000;  // 2 minutos
+let timeout2 = 120000; // 2 minutos
 let poin = 500;
 const threshold = 0.72;
 let juegos = {};
