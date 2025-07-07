@@ -17,7 +17,7 @@
 "test": "node test.js",
 "test2": "nodemon index.js" },
     
-"homepage": "https://github.com/INVICTO-RD/GataBot-MD",
+"homepage": "https://github.com/INVICTO-RD/AkumaBot-MD",
 "author": {
 "name": "INVICTO-RD" },
     
