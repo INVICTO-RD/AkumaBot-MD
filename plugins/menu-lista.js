@@ -109,7 +109,7 @@ let menu = `⎔ \`\`\`${horarioFecha}\`\`\`
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *GataCoins ➟* ${money} 🐈
+⊜ *AkumaCoins ➟* ${money} 🐉
 ⊜ *Tokens ➟* ${joincount} 🪙`.trim()
       
 const buttonParamsJson = JSON.stringify({
@@ -169,10 +169,10 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *GataCoins ➟* ${money} 🐈
+⊜ *AkumaCoins ➟* ${money} 🐉
 ⊜ *Tokens ➟* ${joincount} 🪙
 
-*╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
+*╭━〔  OPCIONES DE MENU  〕⬣*
 ┃
 ┃Ⓜ️ _*MENÚ COMPLETO*_ Ⓜ️
 ┃➺ _${usedPrefix}menucompleto | allmenu_
