@@ -66,4 +66,4 @@ this.readMessages([m.key])
 let usedPrefix = m.text.match(prefixRegex)[0]
 let command = m.text.slice(usedPrefix.length).trim().split(' ')[0]
 }
-}
+} 
