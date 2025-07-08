@@ -25,6 +25,8 @@ global.owner = [
 
 global.mods = []
 global.prems = []
+global.db.data.settings = global.db.data.settings || {};
+global.db.data.settings[this.user.jid] = global.db.data.settings[this.user.jid] || { prefix: '#' }; // MODIFICACIÓN
 
 //cambia a false Desactivar en "auto-reconexion" de sub-bots
 global.gataJadibts = true
